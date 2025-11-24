@@ -43,6 +43,9 @@
     "inquirer": "^9.3.8",
     "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
-    "typescript": "^5.9.3"
+    "publint": "^0.3.15",
+    "tsdown": "^0.16.6",
+    "typescript": "^5.9.3",
+    "unplugin-unused": "^0.5.6"
   }
 }
