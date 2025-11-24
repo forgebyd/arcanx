@@ -1,0 +1,30 @@
+fix:
+  - head-branch: ["^fix/", "^bugfix/", "fix", "bugfix"]
+feature:
+  - head-branch: ["^feature/", "feature"]
+development:
+  - base-branch: "development"
+release:
+  - base-branch: "main"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ["docs/**/*", ".github/*.md", "*.md"]
+ci:
+  - changed-files:
+      - any-glob-to-any-file: ".github/workflows/*"
+environment:
+  - changed-files:
+      - any-glob-to-any-file: [".husky/*", ".vscode/*"]
+
+package:
+  - changed-files:
+      - any-glob-to-any-file: "packages/**/*"
+example:
+  - changed-files:
+      - any-glob-to-any-file: "examples/**/*"
+
+infrastructure:
+  - changed-files:
+      - any-glob-to-any-file:
+          ["package.json", "pnpm-*.yaml", "biome.json", "tsconfig.json"]
