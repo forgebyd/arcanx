@@ -26,6 +26,7 @@
   "scripts": {
     "biome.format": "biome format --write",
     "biome.lint": "biome lint --write --unsafe",
+    "build": "tsdown",
     "commit": "git-cz --signoff",
     "lint": "lint-staged",
     "prepare": "husky",
