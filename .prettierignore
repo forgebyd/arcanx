@@ -1,0 +1,17 @@
+node_modules
+
+build
+dist
+out
+
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+yarn.lock
+
+.npmrc
+
+*.ts 
+*.js
+*.json
+*.jsonc

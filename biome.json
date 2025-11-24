@@ -1,0 +1,145 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "maxSize": 1048576,
+    "includes": ["**/*.{ts,js,json,jsonc}"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "a11y": {
+        "recommended": true
+      },
+      "complexity": {
+        "recommended": true,
+        "noUselessStringConcat": "error",
+        "noVoid": "error",
+        "useSimplifiedLogicExpression": "warn"
+      },
+      "correctness": {
+        "recommended": true,
+        "noGlobalDirnameFilename": "error",
+        "noUndeclaredVariables": "error",
+        "useJsonImportAttributes": "error"
+      },
+      "nursery": {
+        "noEmptySource": "error",
+        "noUnusedExpressions": "warn",
+        "noUselessCatchBinding": "error",
+        "noUselessUndefined": "warn"
+      },
+      "performance": {
+        "recommended": true,
+        "noAwaitInLoops": "warn"
+      },
+      "security": {
+        "recommended": true
+      },
+      "style": {
+        "recommended": true,
+        "noDefaultExport": "error",
+        "noEnum": "error",
+        "noInferrableTypes": "error",
+        "noNegationElse": "error",
+        "noNonNullAssertion": "error",
+        "noParameterAssign": "error",
+        "noShoutyConstants": "warn",
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "warn",
+        "useBlockStatements": "warn",
+        "useConsistentArrayType": "error",
+        "useConsistentBuiltinInstantiation": "error",
+        "useDefaultParameterLast": "warn",
+        "useDefaultSwitchClause": "warn",
+        "useFilenamingConvention": {
+          "level": "warn",
+          "options": {
+            "filenameCases": ["camelCase", "kebab-case", "PascalCase", "export"]
+          }
+        },
+        "useNamingConvention": {
+          "level": "warn",
+          "options": {
+            "strictCase": false
+          }
+        },
+        "useNumberNamespace": "error",
+        "useNumericSeparators": "error",
+        "useObjectSpread": "warn",
+        "useShorthandAssign": "warn",
+        "useShorthandFunctionType": "warn",
+        "useTemplate": "error"
+      },
+      "suspicious": {
+        "recommended": true,
+        "noEmptyBlockStatements": "warn",
+        "noUnassignedVariables": "warn",
+        "noVar": "error",
+        "useAwait": "info",
+        "useErrorMessage": "info"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "es5"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": false
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.config.{js,cjs,mjs,ts,cts,mts}",
+        "**/*.setup.{js,cjs,mjs,ts,cts,mts}"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          },
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["package.json"],
+      "json": {
+        "parser": {
+          "allowComments": false,
+          "allowTrailingCommas": false
+        }
+      }
+    }
+  ]
+}
