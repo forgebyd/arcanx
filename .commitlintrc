@@ -1,0 +1,8 @@
+{
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "body-max-length": [2, "always", 200],
+    "body-min-length": [2, "always", 0],
+    "signed-off-by": [2, "always"]
+  }
+}
