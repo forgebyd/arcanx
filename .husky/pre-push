@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+pnpm pub.lint.packages
+
+pnpm depcheck
+pnpm typecheck
