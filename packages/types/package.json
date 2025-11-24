@@ -1,0 +1,68 @@
+{
+  "name": "@arcanx/types",
+  "description": "Shared types definition for arcanx packages",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "author": {
+    "email": "ini.dwiii@gmail.com",
+    "name": "Dwi Payana",
+    "url": "https://github.com/forgebyd"
+  },
+  "homepage": "https://github.com/arcanx/blob/main/packages/types",
+  "readme": "https://github.com/arcanx/blob/main/packages/types/README.md",
+  "repository": {
+    "directory": "packages/types",
+    "type": "git",
+    "url": "git+https://github.com/arcanx/arcanx.git"
+  },
+  "packageManager": "pnpm@10.23.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "volta": {
+    "node": "24.11.1",
+    "pnpm": "10.23.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "dev": "./source/index.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "keywords": [
+    "forgebyd",
+    "arcanx",
+    "automation",
+    "cli",
+    "command",
+    "command-line",
+    "file-generator",
+    "code-generator",
+    "types",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "pnpm run -w build --filter 'types'",
+    "start.prod": "node ./dist/index.mjs",
+    "start.dev": "node --conditions=dev ./dist/index.mjs",
+    "dev": "tsx --conditions=dev ./source/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
