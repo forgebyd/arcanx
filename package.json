@@ -29,6 +29,8 @@
     "build": "tsdown",
     "commit": "git-cz --signoff",
     "lint": "lint-staged",
+    "pub.lint.examples": "publint examples/*",
+    "pub.lint.packages": "publint packages/*",
     "prepare": "husky",
     "prettier.format": "prettier --write",
     "prettier.lint": "prettier --check"
