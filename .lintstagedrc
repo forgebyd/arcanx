@@ -3,5 +3,6 @@
   "*.{json,jsonc}": ["pnpm biome.lint", "pnpm biome.format"],
   "*.{yaml,yml}": ["pnpm prettier.format"],
   "*.*rc": ["pnpm prettier.format"],
-  "*.md": ["pnpm prettier.format"]
+  "*.md": ["pnpm prettier.format"],
+  "*.ts": ["bash -c 'pnpm typecheck'"]
 }
