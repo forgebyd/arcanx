@@ -76,6 +76,10 @@ export type TemplateResourceResolved = {
     relative: RelativePath;
   };
   rawContent: string;
+  meta: {
+    origin: 'external' | 'internal';
+    sourcePath: AbsolutePath;
+  };
 };
 
 /**

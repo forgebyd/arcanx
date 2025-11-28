@@ -2,6 +2,7 @@
 
 import type { ReadonlyDeep, UnknownArray, UnknownRecord } from 'type-fest';
 import type { Brand } from '../utilities/helper.js';
+import type { AbsolutePath } from '../utilities/path.js';
 
 /**
  * A branded type representing the name of a template helper.
@@ -70,6 +71,10 @@ export type TemplateHelperResourceSpec<TContext = UnknownArray> = {
 export type TemplateHelperResourceResolved<TContext = UnknownArray> = {
   name: TemplateHelperName;
   delegation: TemplateHelperDelegate<TContext>;
+  meta: {
+    origin: 'external' | 'internal';
+    sourcePath: AbsolutePath;
+  };
 };
 
 /**

@@ -2,6 +2,7 @@
 
 import type { ReadonlyDeep, UnknownRecord } from 'type-fest';
 import type { Brand } from '../utilities/helper.js';
+import type { AbsolutePath } from '../utilities/path.js';
 
 /**
  * A branded type representing the name of a template partial.
@@ -67,6 +68,10 @@ export type TemplatePartialResourceSpec<TContext = UnknownRecord> = {
 export type TemplatePartialResourceResolved<TContext = UnknownRecord> = {
   name: TemplatePartialName;
   delegate: TemplatePartialDelegate<TContext>;
+  meta: {
+    origin: 'external' | 'internal';
+    sourcePath: AbsolutePath;
+  };
 };
 
 /**
