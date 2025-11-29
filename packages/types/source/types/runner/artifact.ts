@@ -5,28 +5,22 @@ import type {
   GeneratorActionBuiltInType,
   GeneratorActionCustomType,
 } from '../loader/generator-action.js';
-import type { Brand, Id, Timestamp } from '../utilities/helper.js';
+import type { Brand, Id } from '../utilities/helper.js';
 import type { AbsolutePath } from '../utilities/path.js';
 
 export type ArtifactId = Brand<Id<'artifact'>, 'ArtifactId'>;
 
 export type ArtifactResourceResolved = {
   id: ArtifactId;
-  data: Record<string, unknown>;
-  rawContent: string;
+  checksum: string;
   finalContent: string;
-  execution: {
-    startTime: Timestamp;
-    endTime: Timestamp;
-    durationMs: number;
-  };
+  rawContent: string;
   provenance: {
     actionType: GeneratorActionBuiltInType | GeneratorActionCustomType;
     generatorName: GeneratorResourceName;
     destinationPath: AbsolutePath;
     sourcePath: AbsolutePath;
   };
-  checksum: string;
 };
 
 export type ArtifactResourceManifest = ReadonlyDeep<ArtifactResourceResolved>;
