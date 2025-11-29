@@ -3,6 +3,7 @@ import type { ContextResourceResolved } from '../core/context-resource.js';
 import type { ArtifactResourceResolved } from '../runner/artifact.js';
 import type { PlanResourceResolved } from '../runner/plan.js';
 import type { ReportResourceManifest } from '../runner/report.js';
+import type { ResultResourceManifest } from '../runner/result.js';
 import type { ConfigResolved } from './config.js';
 
 export type OnInitializedHook = (context: HookContext) => void;
@@ -32,7 +33,10 @@ export type OnPlannedHook = (
   plans: PlanResourceResolved[]
 ) => PlanResourceResolved[];
 
-export type OnAppliedHook = (context: HookContext) => void;
+export type OnAppliedHook = (
+  context: HookContext,
+  results: ResultResourceManifest[]
+) => void;
 
 export type OnFinalizedHook = (context: HookContext) => void;
 
