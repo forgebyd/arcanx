@@ -64,7 +64,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@types/debug": "^4.1.12",
     "type-fest": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12"
   }
 }
