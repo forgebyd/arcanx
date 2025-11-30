@@ -10,12 +10,12 @@
     "name": "Dwi Payana",
     "url": "https://github.com/forgebyd"
   },
-  "homepage": "https://github.com/arcanx/blob/main/packages/types",
-  "readme": "https://github.com/arcanx/blob/main/packages/types/README.md",
+  "homepage": "https://github.com/forgebyd/arcanx/blob/main/packages/types",
+  "readme": "https://github.com/forgebyd/arcanx/blob/main/packages/types/README.md",
   "repository": {
     "directory": "packages/types",
     "type": "git",
-    "url": "git+https://github.com/arcanx/arcanx.git"
+    "url": "git+https://github.com/forgebyd/arcanx.git"
   },
   "packageManager": "pnpm@10.23.0",
   "publishConfig": {
