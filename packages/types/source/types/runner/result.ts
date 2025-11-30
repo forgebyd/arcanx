@@ -5,11 +5,33 @@ import type {
   ErrorResolutionStrategy,
 } from '../loader/config-strategy.js';
 import type { Brand, Id, Timestamp } from '../utilities/helper.js';
+import type { PlanId } from './plan.js';
 
+/**
+ * A branded string representing the ID of a result.
+ * This type is used to ensure type safety when working with result IDs.
+ *
+ * @example
+ * ```ts
+ * const resultId: ResultId = 'result_123' as ResultId;
+ * ```
+ *
+ * @see {@link ResultResourceResolved}
+ * @see {@link ResultResourceManifest}
+ *
+ * @category Runner
+ */
 export type ResultId = Brand<Id<'result'>, 'ResultId'>;
 
+/**
+ * A resolved representation of a result.
+ * This type is used to ensure type safety when working with result resources.
+ *
+ * @category Runner
+ */
 export type ResultResourceResolved = {
   id: ResultId;
+  planId: PlanId;
   status: 'failed' | 'skipped' | 'succeed';
   statusMessage: string;
   conflictSnapshot: {
@@ -22,7 +44,10 @@ export type ResultResourceResolved = {
   errorSnapshot: {
     isErrored: boolean;
     chosenResolution?: ErrorResolutionStrategy;
-    errorInstance?: Error;
+    error?: {
+      name: string;
+      message: string;
+    };
   };
   execution: {
     startTime: Timestamp;
@@ -31,4 +56,10 @@ export type ResultResourceResolved = {
   };
 };
 
+/**
+ * A manifest representation of a result.
+ * This type is used to ensure type safety when working with result resources.
+ *
+ * @category Runner
+ */
 export type ResultResourceManifest = ReadonlyDeep<ResultResourceResolved>;
