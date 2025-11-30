@@ -8,9 +8,7 @@ This is the initial **`v0.1.0`** release introducing the `@arcanx/types` package
 
 **Strategic Goal**: To enforce rigid separation of concerns, eliminate data ambiguity, and ensure the system is deterministic and fully testable.
 
-### Minor Changes
-
-1. 🏗️ Core Types
+#### 1. 🏗️ Core Types
 
 Introduce core types definition, including:
 
@@ -20,7 +18,7 @@ Introduce core types definition, including:
 - Context Resource types
 - Context Runtime types
 
-2. ⚙️ Loader Types
+#### 2. ⚙️ Loader Types
 
 Introduce loader types, including:
 
@@ -32,7 +30,7 @@ Introduce loader types, including:
 - Generator Action types
 - Generator Prompt types
 
-3. 📠 Renderer Types
+#### 3. 📠 Renderer Types
 
 Introduce renderer types, including:
 
@@ -41,7 +39,7 @@ Introduce renderer types, including:
 - Renderer Partial types
 - Renderer Template types
 
-4. 🏃 Runner Types
+#### 4. 🏃 Runner Types
 
 Introduce runner types, including:
 
@@ -50,7 +48,7 @@ Introduce runner types, including:
 - Report types
 - Result types
 
-5. 💡 Utilities
+#### 5. 💡 Utilities
 
 Introduce some utility types, including:
 
