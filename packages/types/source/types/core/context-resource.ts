@@ -1,3 +1,4 @@
+import type { ActionResourceManifest } from '../loader/action.js';
 import type { GeneratorResourceManifest } from '../loader/generator.js';
 import type { TemplateHelperResourceManifest } from '../renderer/helper.js';
 import type { TemplatePartialResourceManifest } from '../renderer/partial.js';
@@ -10,6 +11,7 @@ import type { TemplateResourceManifest } from '../renderer/template.js';
  * @category Core
  */
 export type ContextResourceResolved = {
+  customActions: ActionResourceManifest[];
   generators: GeneratorResourceManifest[];
   rendererHelpers: TemplateHelperResourceManifest[];
   rendererPartials: TemplatePartialResourceManifest[];
