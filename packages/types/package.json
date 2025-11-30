@@ -63,6 +63,10 @@
     "dev": "tsx --conditions=dev ./source/index.ts",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "type-fest": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12"
+  }
 }
