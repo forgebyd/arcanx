@@ -75,10 +75,6 @@ importers:
       '@arcanx/types':
         specifier: workspace:*
         version: link:../types
-    devDependencies:
-      '@types/debug':
-        specifier: ^4.1.12
-        version: 4.1.12
 
 packages:
 

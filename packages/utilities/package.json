@@ -65,8 +65,5 @@
   },
   "dependencies": {
     "@arcanx/types": "workspace:*"
-  },
-  "devDependencies": {
-    "@types/debug": "^4.1.12"
   }
 }
