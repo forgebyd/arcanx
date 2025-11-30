@@ -11,8 +11,24 @@ import type {
   GeneratorPromptSpec,
 } from './generator-prompt.js';
 
+/**
+ * A branded string representing the name of a generator.
+ * This type is used to ensure type safety when working with generators.
+ *
+ * @see {@link GeneratorResourceSpec}
+ * @see {@link GeneratorResourceResolved}
+ * @see {@link GeneratorResourceManifest}
+ *
+ * @category Loader
+ */
 export type GeneratorResourceName = Brand<string, 'GeneratorName'>;
 
+/**
+ * A specification for a generator.
+ * This type is used to ensure type safety when working with generators.
+ *
+ * @category Loader
+ */
 export type GeneratorResourceSpec = {
   name: string;
   description: string;
@@ -20,6 +36,12 @@ export type GeneratorResourceSpec = {
   prompts: GeneratorPromptSpec[];
 };
 
+/**
+ * A resolved representation of a generator.
+ * This type is used to ensure type safety when working with generators.
+ *
+ * @category Loader
+ */
 export type GeneratorResourceResolved = {
   name: GeneratorResourceName;
   description: string;
@@ -31,6 +53,12 @@ export type GeneratorResourceResolved = {
   };
 };
 
+/**
+ * A manifest representation of a resolved generator.
+ * This type is used to ensure type safety when working with generators.
+ *
+ * @category Loader
+ */
 export type GeneratorResourceManifest = Readonly<{
   name: GeneratorResourceName;
   description: string;

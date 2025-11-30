@@ -16,6 +16,12 @@ import type {
   ConfigStrategySpec,
 } from './config-strategy.js';
 
+/**
+ * A type representing the specification of a configuration.
+ * This type is used to ensure type safety when working with configurations.
+ *
+ * @category Loader
+ */
 export type ConfigSpec = {
   behavior?: {
     dry?: boolean;
@@ -42,6 +48,12 @@ export type ConfigSpec = {
   hooks?: ConfigHookSpec;
 };
 
+/**
+ * A type representing the resolved representation of a configuration.
+ * This type is used to ensure type safety when working with configurations.
+ *
+ * @category Loader
+ */
 export type ConfigResolved = {
   behavior: {
     dry: boolean;
@@ -68,6 +80,12 @@ export type ConfigResolved = {
   hooks: ConfigHookResolved;
 };
 
+/**
+ * A type representing the manifest of a configuration.
+ * This type is used to ensure type safety when working with configurations.
+ *
+ * @category Loader
+ */
 export type ConfigManifest = Readonly<{
   behavior: Readonly<ConfigResolved['behavior']>;
   cache: Readonly<ConfigResolved['cache']>;
