@@ -14,6 +14,13 @@ import type {
   ContextRuntimeManifest,
 } from './context-runtime.js';
 
+/**
+ * A context object passed to a hook function.
+ * This object contains information about the current context.
+ * This type is used to ensure type safety when working with hooks.
+ *
+ * @category Core
+ */
 export type HookContext = {
   runtimeId: ContextRuntimeId;
   runtimeCommand: string;
@@ -22,6 +29,13 @@ export type HookContext = {
   strategy?: ConfigManifest['strategy'];
 };
 
+/**
+ * A context object passed to a run function.
+ * This object contains information about the current context.
+ * This type is used to ensure type safety when working with run functions.
+ *
+ * @category Core
+ */
 export type RunContext = {
   config: ConfigManifest;
   env: ContextEnvManifest;
