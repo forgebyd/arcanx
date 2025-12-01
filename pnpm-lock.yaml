@@ -75,6 +75,25 @@ importers:
       '@arcanx/types':
         specifier: workspace:*
         version: link:../types
+      chalk:
+        specifier: ^5.6.2
+        version: 5.6.2
+      change-case:
+        specifier: ^5.4.4
+        version: 5.4.4
+      lodash.concat:
+        specifier: ^4.5.0
+        version: 4.5.0
+      lodash.has:
+        specifier: ^4.5.2
+        version: 4.5.2
+    devDependencies:
+      '@types/lodash.concat':
+        specifier: ^4.5.9
+        version: 4.5.9
+      '@types/lodash.has':
+        specifier: ^4.5.9
+        version: 4.5.9
 
 packages:
 
@@ -710,6 +729,15 @@ packages:
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
+  '@types/lodash.concat@4.5.9':
+    resolution: {integrity: sha512-wf3uo5EYw5SzMOl9oFZtPDtc+soWjLzbZfV4CgJkesq05EQUxHu41ETQAY9E/yRdpyApedWi/jzf7gC8OuJaPw==}
+
+  '@types/lodash.has@4.5.9':
+    resolution: {integrity: sha512-Rm9P7bv26OLOLZL4rw6cjqmUZOUJAEDt7fGMhU7DE4AG+PXpnoRxZl2Jc9vmZjAEZ/Q+Xoor9EE+GGM3rxT5cw==}
+
+  '@types/lodash@4.17.21':
+    resolution: {integrity: sha512-FOvQ0YPD5NOfPgMzJihoT+Za5pdkDJWcbpuj1DjaKZIr/gxodQjY/uWEFlTNqW2ugXHUiL8lRQgw63dzKHZdeQ==}
+
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
@@ -837,6 +865,9 @@ packages:
   chalk@5.6.2:
     resolution: {integrity: sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
+  change-case@5.4.4:
+    resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
 
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
@@ -1365,6 +1396,12 @@ packages:
 
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
+
+  lodash.concat@4.5.0:
+    resolution: {integrity: sha512-US6b1Nqek3shg2qmv1IjTN5P7tPL1RKu77VpdGtVprxmnTI/HlsHGqI2Oa5Irznk0ZB5IXHwocMeMZK8vf4+CA==}
+
+  lodash.has@4.5.2:
+    resolution: {integrity: sha512-rnYUdIo6xRCJnQmbVFEwcxF144erlD+M3YcJUVesflU9paQaE8p+fJDcIQrlMYbxoANFL+AB9hZrzSBBk5PL+g==}
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -2592,6 +2629,16 @@ snapshots:
     dependencies:
       '@types/ms': 2.1.0
 
+  '@types/lodash.concat@4.5.9':
+    dependencies:
+      '@types/lodash': 4.17.21
+
+  '@types/lodash.has@4.5.9':
+    dependencies:
+      '@types/lodash': 4.17.21
+
+  '@types/lodash@4.17.21': {}
+
   '@types/ms@2.1.0': {}
 
   '@types/node@12.20.55': {}
@@ -2705,6 +2752,8 @@ snapshots:
       supports-color: 7.2.0
 
   chalk@5.6.2: {}
+
+  change-case@5.4.4: {}
 
   chardet@0.7.0: {}
 
@@ -3271,6 +3320,10 @@ snapshots:
       p-locate: 6.0.0
 
   lodash.camelcase@4.3.0: {}
+
+  lodash.concat@4.5.0: {}
+
+  lodash.has@4.5.2: {}
 
   lodash.isplainobject@4.0.6: {}
 
