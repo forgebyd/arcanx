@@ -8,7 +8,7 @@ import type { TemplateResourceManifest } from '../renderer/template.js';
  * A resolved context resource.
  * This type is used to ensure type safety when working with context resources.
  *
- * @category Core
+ * @category Core.ContextResource
  */
 export type ContextResourceResolved = {
   customActions: ActionResourceManifest[];
@@ -22,6 +22,6 @@ export type ContextResourceResolved = {
  * A manifest representation of a resolved context resource.
  * This type is used to ensure type safety when working with context resources.
  *
- * @category Core
+ * @category Core.ContextResource
  */
 export type ContextResourceManifest = Readonly<ContextResourceResolved>;

@@ -19,7 +19,7 @@ import type {
  * This object contains information about the current context.
  * This type is used to ensure type safety when working with hooks.
  *
- * @category Core
+ * @category Core.Context
  */
 export type HookContext = {
   runtimeId: ContextRuntimeId;
@@ -34,7 +34,7 @@ export type HookContext = {
  * This object contains information about the current context.
  * This type is used to ensure type safety when working with run functions.
  *
- * @category Core
+ * @category Core.Context
  */
 export type RunContext = {
   config: ConfigManifest;

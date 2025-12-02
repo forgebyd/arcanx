@@ -6,7 +6,11 @@ import type { Brand } from './helper.js';
  * absolute paths in the codebase.
  *
  * @example
+ * ```ts
  * let absPath: AbsolutePath = "/usr/local/bin" as AbsolutePath;
+ * ```
+ *
+ * @category Utility.Path
  */
 export type AbsolutePath = Brand<string, 'AbsolutePath'>;
 
@@ -16,6 +20,10 @@ export type AbsolutePath = Brand<string, 'AbsolutePath'>;
  * relative paths in the codebase.
  *
  * @example
+ * ```ts
  * let relPath: RelativePath = "./folder/file.txt" as RelativePath;
+ * ```
+ *
+ * @category Utility.Path
  */
 export type RelativePath = Brand<string, 'RelativePath'>;

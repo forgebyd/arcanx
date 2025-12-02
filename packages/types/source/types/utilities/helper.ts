@@ -12,7 +12,7 @@
  * type OrderId = Brand<number, 'OrderId'>;
  * ```
  *
- * @category Utilities
+ * @category Utility.Helper
  */
 export type Brand<T, TName extends string> = T & {
   __brand: TName;
@@ -31,7 +31,7 @@ export type Brand<T, TName extends string> = T & {
  * // Results in a type like 'session_abc123'
  * ```
  *
- * @category Utilities
+ * @category Utility.Helper
  */
 export type Id<TName extends string> = `${TName}_${string}${string}`;
 
@@ -46,6 +46,6 @@ export type Id<TName extends string> = `${TName}_${string}${string}`;
  * const timestamp: CreatedAt = Date.now() as Timestamp;
  * ```
  *
- * @category Utilities
+ * @category Utility.Helper
  */
 export type Timestamp = Brand<number, 'Timestamp'>;

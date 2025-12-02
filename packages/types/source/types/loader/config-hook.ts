@@ -21,7 +21,7 @@ import type { ConfigResolved } from './config.js';
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnInitializedHook = (context: HookContext) => void;
 
@@ -38,7 +38,7 @@ export type OnInitializedHook = (context: HookContext) => void;
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnContextCreatedHook = (
   context: HookContext,
@@ -58,7 +58,7 @@ export type OnContextCreatedHook = (
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnConfigLoadedHook = (
   context: HookContext,
@@ -78,7 +78,7 @@ export type OnConfigLoadedHook = (
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnResourceLoadedHook = (
   context: HookContext,
@@ -98,7 +98,7 @@ export type OnResourceLoadedHook = (
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnRenderedHook = (
   context: HookContext,
@@ -118,7 +118,7 @@ export type OnRenderedHook = (
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnPlannedHook = (
   context: HookContext,
@@ -136,7 +136,7 @@ export type OnPlannedHook = (
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnAppliedHook = (
   context: HookContext,
@@ -157,7 +157,7 @@ export type OnAppliedHook = (
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnFinalizedHook = (context: HookContext) => void;
 
@@ -172,7 +172,7 @@ export type OnFinalizedHook = (context: HookContext) => void;
  * @see {@link ConfigHookResolved}
  * @see {@link ConfigHookManifest}
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type OnReportedHook = (
   context: HookContext,
@@ -191,7 +191,7 @@ export type OnReportedHook = (
  * A collection of hook functions
  * that can be registered with a config.
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type ConfigHookSpec = {
   onInitialized?: OnInitializedHook;
@@ -209,7 +209,7 @@ export type ConfigHookSpec = {
  * A collection of resolved hook functions
  * that can be registered with a config.
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type ConfigHookResolved = {
   onInitialized: OnInitializedHook;
@@ -227,6 +227,6 @@ export type ConfigHookResolved = {
  * A collection of manifested hook functions
  * that can be registered with a config.
  *
- * @category Loader
+ * @category Loader.ConfigHook
  */
 export type ConfigHookManifest = Readonly<ConfigHookResolved>;

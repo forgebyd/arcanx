@@ -19,7 +19,7 @@ import type { PlanId } from './plan.js';
  * @see {@link ResultResourceResolved}
  * @see {@link ResultResourceManifest}
  *
- * @category Runner
+ * @category Runner.Result
  */
 export type ResultId = Brand<Id<'result'>, 'ResultId'>;
 
@@ -27,7 +27,7 @@ export type ResultId = Brand<Id<'result'>, 'ResultId'>;
  * A resolved representation of a result.
  * This type is used to ensure type safety when working with result resources.
  *
- * @category Runner
+ * @category Runner.Result
  */
 export type ResultResourceResolved = {
   id: ResultId;
@@ -60,6 +60,6 @@ export type ResultResourceResolved = {
  * A manifest representation of a result.
  * This type is used to ensure type safety when working with result resources.
  *
- * @category Runner
+ * @category Runner.Result
  */
 export type ResultResourceManifest = ReadonlyDeep<ResultResourceResolved>;

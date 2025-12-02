@@ -8,7 +8,7 @@ import type { Brand } from '../utilities/helper.js';
  * const engineName: TemplateEngineName = 'handlebars' as TemplateEngineName;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Engine
  */
 export type TemplateEngineName = Brand<string, 'TemplateEngineName'>;
 
@@ -20,7 +20,7 @@ export type TemplateEngineName = Brand<string, 'TemplateEngineName'>;
  * const engineExt: TemplateEngineExtension = 'hbs' as TemplateEngineExtension;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Engine
  */
 export type TemplateEngineExtension = Brand<string, 'TemplateEngineExtension'>;
 
@@ -35,7 +35,7 @@ export type TemplateEngineExtension = Brand<string, 'TemplateEngineExtension'>;
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Engine
  */
 export type TemplateEngineConfigSpec = {
   engine?: 'handlebars' | string;
@@ -53,7 +53,7 @@ export type TemplateEngineConfigSpec = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Engine
  */
 export type TemplateEngineConfigResolved = {
   engine: TemplateEngineName;
@@ -71,7 +71,7 @@ export type TemplateEngineConfigResolved = {
  * } as const;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Engine
  */
 export type TemplateEngineConfigManifest =
   Readonly<TemplateEngineConfigResolved>;

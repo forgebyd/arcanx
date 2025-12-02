@@ -14,7 +14,7 @@ import type {
  * @see {@link ActionResourceResolved}
  * @see {@link ActionResourceManifest}
  *
- * @category Loader
+ * @category Loader.Action
  */
 export type ActionDelegate = Promisable<
   (
@@ -28,7 +28,7 @@ export type ActionDelegate = Promisable<
  * A specification for an action.
  * This type is used to ensure type safety when working with actions.
  *
- * @category Loader
+ * @category Loader.Action
  */
 export type ActionResourceSpec = {
   name?: string;
@@ -39,7 +39,7 @@ export type ActionResourceSpec = {
  * A resolved representation of an action.
  * This type is used to ensure type safety when working with actions.
  *
- * @category Loader
+ * @category Loader.Action
  */
 export type ActionResourceResolved = {
   name: GeneratorActionCustomType;
@@ -54,6 +54,6 @@ export type ActionResourceResolved = {
  * A manifest for an action.
  * This type is used to ensure type safety when working with actions.
  *
- * @category Loader
+ * @category Loader.Action
  */
 export type ActionResourceManifest = ReadonlyDeep<ActionResourceResolved>;

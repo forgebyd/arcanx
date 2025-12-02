@@ -5,7 +5,7 @@ import type { IOLog } from '../utilities/log.js';
  * A type representing the manifest of a context IO.
  * This type is used to ensure type safety when working with context IO.
  *
- * @category Core
+ * @category Core.ContextIO
  */
 export type ContextIOManifest = Readonly<{
   filesystem: IOFilesystem;

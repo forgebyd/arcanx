@@ -16,7 +16,7 @@ import type { ArtifactResourceManifest } from './artifact.js';
  * @see {@link PlanResourceResolved}
  * @see {@link PlanResourceManifest}
  *
- * @category Runner
+ * @category Runner.Plan
  */
 export type PlanId = Brand<Id<'plan'>, 'PlanId'>;
 
@@ -24,7 +24,7 @@ export type PlanId = Brand<Id<'plan'>, 'PlanId'>;
  * A resolved representation of a plan.
  * This type is used to ensure type safety when working with plan resources.
  *
- * @category Runner
+ * @category Runner.Plan
  */
 export type PlanResourceResolved = {
   id: PlanId;
@@ -42,6 +42,6 @@ export type PlanResourceResolved = {
  * A manifest representation of a plan.
  * This type is used to ensure type safety when working with plan resources.
  *
- * @category Runner
+ * @category Runner.Plan
  */
 export type PlanResourceManifest = ReadonlyDeep<PlanResourceResolved>;

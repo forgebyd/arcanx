@@ -15,7 +15,7 @@ import type { ResultId, ResultResourceManifest } from './result.js';
  * @see {@link ReportResourceResolved}
  * @see {@link ReportResourceManifest}
  *
- * @category Runner
+ * @category Runner.Report
  */
 export type ReportId = Brand<Id<'report'>, 'ReportId'>;
 
@@ -23,7 +23,7 @@ export type ReportId = Brand<Id<'report'>, 'ReportId'>;
  * A resolved representation of a report.
  * This type is used to ensure type safety when working with report resources.
  *
- * @category Runner
+ * @category Runner.Report
  */
 export type ReportResourceResolved = {
   id: ReportId;
@@ -36,6 +36,6 @@ export type ReportResourceResolved = {
  * A manifest representation of a report.
  * This type is used to ensure type safety when working with report resources.
  *
- * @category Runner
+ * @category Runner.Report
  */
 export type ReportResourceManifest = ReadonlyDeep<ReportResourceResolved>;

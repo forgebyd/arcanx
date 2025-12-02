@@ -1,6 +1,7 @@
 // biome-ignore-all lint/complexity/noBannedTypes: type def file
 
 import type { ReadonlyDeep, UnknownRecord } from 'type-fest';
+
 import type { Brand } from '../utilities/helper.js';
 import type { AbsolutePath } from '../utilities/path.js';
 
@@ -17,7 +18,7 @@ import type { AbsolutePath } from '../utilities/path.js';
  * const partialName: TemplatePartialName = 'header' as TemplatePartialName;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Partial
  */
 export type TemplatePartialName = Brand<string, 'TemplatePartialName'>;
 
@@ -38,7 +39,7 @@ export type TemplatePartialName = Brand<string, 'TemplatePartialName'>;
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Partial
  */
 export type TemplatePartialResourceSpec<TContext = UnknownRecord> = {
   name?: string;
@@ -63,7 +64,7 @@ export type TemplatePartialResourceSpec<TContext = UnknownRecord> = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Partial
  */
 export type TemplatePartialResourceResolved<TContext = UnknownRecord> = {
   name: TemplatePartialName;
@@ -91,7 +92,7 @@ export type TemplatePartialResourceResolved<TContext = UnknownRecord> = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Partial
  */
 export type TemplatePartialResourceManifest<TContext = UnknownRecord> =
   ReadonlyDeep<TemplatePartialResourceResolved<TContext>>;
@@ -110,7 +111,7 @@ export type TemplatePartialResourceManifest<TContext = UnknownRecord> =
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Partial
  */
 export type TemplatePartialDelegate<TContext = UnknownRecord> = (
   context: TContext,

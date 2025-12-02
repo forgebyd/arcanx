@@ -1,5 +1,6 @@
 /**
  * A result type that can represent either a success with data or a failure with an error.
+ *
  * @template TData - The type of the data in case of success.
  * @template TError - The type of the error in case of failure.
  * @returns A union type representing either a success or a failure.
@@ -16,6 +17,8 @@
  *   error: new Error('Operation failed')
  * }
  * ```
+ *
+ * @category Utility.Result
  */
 export type Result<TData, TError extends Error = Error> =
   | { isSuccess: true; data: TData }
@@ -34,11 +37,14 @@ export type Result<TData, TError extends Error = Error> =
  *   data: 'Operation Succeeded'
  * }
  * ```
+ *
+ * @category Utility.Result
  */
 export type Success<TData> = Result<TData, never>;
 
 /**
  * A failure result containing an error.
+ *
  * @template TError - The type of the error.
  * @returns A failure result with the specified error type.
  *
@@ -49,5 +55,7 @@ export type Success<TData> = Result<TData, never>;
  *   error: new Error('Something went wrong')
  * }
  * ```
+ *
+ * @category Utility.Result
  */
 export type Failure<TError extends Error> = Result<never, TError>;
