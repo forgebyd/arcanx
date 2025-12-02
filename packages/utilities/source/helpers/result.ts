@@ -59,7 +59,10 @@ export const attemptSync = <TData, TError extends Error>(
   callback: () => TData
 ): Result<TData, TError> => {
   try {
-    if (callback instanceof Promise) {
+    if (
+      callback instanceof Promise ||
+      callback.constructor.name === 'AsyncFunction'
+    ) {
       // throw error when the given callback is a Promise
       // while executing attemptSync
       throw new Error('Given callback cannot be a promise instance.');
