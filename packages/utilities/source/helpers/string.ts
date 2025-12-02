@@ -1,3 +1,7 @@
+import nodeCrypto from 'node:crypto';
+
+import type { Id } from '@arcanx/types';
+
 import {
   camelCase,
   constantCase,
@@ -6,6 +10,31 @@ import {
   snakeCase,
   trainCase,
 } from 'change-case';
+
+/**
+ * Creates a unique identifier string based on the given prefix.
+ * The generated ID string is in the format of "{prefix}_{uuid}",
+ * where {prefix} is the given string prefix and {uuid} is a randomly
+ * generated UUID.
+ *
+ * @template TPrefix - The prefix string used to generate the unique ID.
+ * @param prefix - The prefix string used to generate the unique ID.
+ *
+ * @returns A unique identifier string based on the given prefix.
+ *
+ * @example
+ * ```ts
+ * const id = createId('arcanx');
+ * // Results in a string like 'arcanx_123e4567-e89b-12d3-a456-426655440000'
+ * ```
+ *
+ * @category Utility.String
+ */
+export const createId = <TPrefix extends string>(
+  prefix: TPrefix
+): Id<TPrefix> => {
+  return `${prefix}_${nodeCrypto.randomUUID()}` as Id<TPrefix>;
+};
 
 /**
  * Converts a given string to camelCase.
