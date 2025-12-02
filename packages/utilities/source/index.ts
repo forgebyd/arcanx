@@ -7,3 +7,4 @@ export * from './helpers/object.js';
 export * from './helpers/path.js';
 export * from './helpers/result.js';
 export * from './helpers/string.js';
+export * from './helpers/time.js';
