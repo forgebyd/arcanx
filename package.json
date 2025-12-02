@@ -37,6 +37,8 @@
     "prettier.lint": "prettier --check",
     "pub.lint.examples": "publint examples/*",
     "pub.lint.packages": "publint packages/*",
+    "test": "vitest",
+    "test.coverage": "vitest --coverage",
     "typecheck": "tsc --noEmit",
     "version.add": "changeset add",
     "version.changelog": "changeset version",
