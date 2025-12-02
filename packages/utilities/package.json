@@ -70,11 +70,13 @@
     "debug": "^4.4.3",
     "lodash.concat": "^4.5.0",
     "lodash.has": "^4.5.2",
+    "lodash.transform": "^4.6.0",
     "supports-color": "^10.2.2"
   },
   "devDependencies": {
     "@types/debug": "^4.1.12",
     "@types/lodash.concat": "^4.5.9",
-    "@types/lodash.has": "^4.5.9"
+    "@types/lodash.has": "^4.5.9",
+    "@types/lodash.transform": "^4.6.9"
   }
 }
