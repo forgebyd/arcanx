@@ -40,7 +40,10 @@ export type Result<TData, TError extends Error = Error> =
  *
  * @category Utility.Result
  */
-export type Success<TData> = Result<TData, never>;
+export type Success<TData> = {
+  isSuccess: true;
+  data: TData;
+};
 
 /**
  * A failure result containing an error.
@@ -58,4 +61,7 @@ export type Success<TData> = Result<TData, never>;
  *
  * @category Utility.Result
  */
-export type Failure<TError extends Error> = Result<never, TError>;
+export type Failure<TError extends Error> = {
+  isSuccess: false;
+  error: TError;
+};
