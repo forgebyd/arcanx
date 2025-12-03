@@ -40,7 +40,7 @@ describe('result helper', () => {
       const res = (await attemptAsync(callback)) as Failure<Error>;
 
       expect(callback).toHaveBeenCalledOnce();
-      expect(callback).rejects.toThrowError();
+      await expect(callback).rejects.toThrowError();
 
       expect(res.isSuccess).toBe(false);
       expect(res.error).toBeInstanceOf(Error);
