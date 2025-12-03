@@ -1,4 +1,5 @@
 import type { Failure, Success } from '@arcanx/types';
+
 import { describe, expect, expectTypeOf, it, vi } from 'vitest';
 
 import {
@@ -8,168 +9,180 @@ import {
   success,
 } from '../../source/helpers/result.js';
 
-describe('Result Helper', () => {
+describe('result helper', () => {
   describe('attemptAsync', () => {
-    it('should run failed correctly', async () => {
-      const error = new Error('Operation Failed');
-
-      // biome-ignore lint/suspicious/useAwait: test
-      const callback = vi.fn(async () => {
-        throw error;
-      });
-
-      const result = await attemptAsync(callback);
-
-      expect(callback).toHaveBeenCalledOnce();
-      await expect(callback).rejects.toThrowError(error);
-
-      if (!result.isSuccess) {
-        expectTypeOf(result).toEqualTypeOf<{
-          isSuccess: false;
-          error: Error;
-        }>();
-
-        expect(result).toStrictEqual({
-          isSuccess: false,
-          error,
-        });
-      }
-    });
-
-    it('should run succeeded correctly', async () => {
-      // biome-ignore lint/suspicious/useAwait: test
+    it('should return a successful response correctly', async () => {
+      // biome-ignore lint/suspicious/useAwait: expect not to use await
       const callback = vi.fn(async () => {
         return {
           message: 'Operation Succeeded',
         };
       });
 
-      const result = await attemptAsync(callback);
+      const res = (await attemptAsync(callback)) as Success<{
+        message: string;
+      }>;
 
       expect(callback).toHaveBeenCalledOnce();
 
-      if (result.isSuccess) {
-        expectTypeOf(result).toEqualTypeOf<{
-          isSuccess: true;
-          data: {
-            message: string;
-          };
-        }>();
+      expect(res.isSuccess).toBe(true);
+      expect(res.data).toStrictEqual({
+        message: 'Operation Succeeded',
+      });
+    });
 
-        expect(result).toStrictEqual({
-          isSuccess: true,
-          data: {
-            message: 'Operation Succeeded',
-          },
-        });
-      }
+    it('should return a failure response correctly', async () => {
+      // biome-ignore lint/suspicious/useAwait: expect not to use await
+      const callback = vi.fn(async () => {
+        throw new Error('Operation Failed');
+      });
+
+      const res = (await attemptAsync(callback)) as Failure<Error>;
+
+      expect(callback).toHaveBeenCalledOnce();
+      expect(callback).rejects.toThrowError();
+
+      expect(res.isSuccess).toBe(false);
+      expect(res.error).toBeInstanceOf(Error);
     });
   });
 
   describe('attemptSync', () => {
-    it('should run failed correctly', () => {
-      const error = new Error('Operation Failed');
+    it('should return a successful response correctly', () => {
       const callback = vi.fn(() => {
-        throw error;
+        return {
+          message: 'Operation Succeeded',
+        };
       });
 
-      const result = attemptSync(callback);
+      const res = attemptSync(callback) as Success<{
+        message: string;
+      }>;
 
       expect(callback).toHaveBeenCalledOnce();
-      expect(callback).toThrowError(error);
 
-      if (!result.isSuccess) {
-        expectTypeOf(result).toEqualTypeOf<{
-          isSuccess: false;
-          error: Error;
-        }>();
-
-        expect(result).toStrictEqual({
-          isSuccess: false,
-          error,
-        });
-      }
-    });
-
-    it('should run succeeded correctly', () => {
-      const callback = vi.fn(() => ({
+      expect(res.isSuccess).toBe(true);
+      expect(res.data).toStrictEqual({
         message: 'Operation Succeeded',
-      }));
-
-      const result = attemptSync(callback);
-
-      expect(callback).toHaveBeenCalledOnce();
-
-      if (result.isSuccess) {
-        expectTypeOf(result).toEqualTypeOf<{
-          isSuccess: true;
-          data: {
-            message: string;
-          };
-        }>();
-
-        expect(result).toStrictEqual({
-          isSuccess: true,
-          data: {
-            message: 'Operation Succeeded',
-          },
-        });
-      }
+      });
     });
 
-    it('should throw error when passed an async callback', () => {
-      const result = attemptSync(async () => ({
-        message: 'Operation Should Fail',
-      })) as { isSuccess: false; error: Error };
+    it('should return a failure response correctly', () => {
+      const callback = vi.fn(() => {
+        throw new Error('Operation Failed');
+      });
 
-      // @ts-expect-error
-      expect(result.data).not.toBeDefined();
+      const res = attemptSync(callback) as Failure<Error>;
 
-      expect(result.isSuccess).toBe(false);
-      expect(result.error).toStrictEqual(
-        new Error('Given callback cannot be a promise instance.')
+      expect(callback).toHaveBeenCalledOnce();
+      expect(callback).toThrowError();
+
+      expect(res.isSuccess).toBe(false);
+      expect(res.error).toBeInstanceOf(Error);
+    });
+
+    it('should throw an error if the callback is a promise', () => {
+      const res = attemptSync(
+        Promise.resolve({
+          message: 'Operation Succeeded',
+          // biome-ignore lint/suspicious/noExplicitAny: expect to use any
+        }) as any
+      ) as Failure<Error>;
+
+      expect(res.isSuccess).toBe(false);
+      expect(res.error).toBeInstanceOf(Error);
+      expect(res.error.message).toBe(
+        'Given callback cannot be a promise instance.'
+      );
+    });
+
+    it('should throw an error if the callback is an async function', () => {
+      // biome-ignore lint/suspicious/useAwait: expect not to use await
+      const res = attemptSync(async () => {
+        return {
+          message: 'Operation Should Fail',
+        };
+      }) as Failure<Error>;
+
+      expect(res.isSuccess).toBe(false);
+      expect(res.error).toBeInstanceOf(Error);
+      expect(res.error.message).toBe(
+        'Given callback cannot be a promise instance.'
       );
     });
   });
 
   describe('failure', () => {
-    it('should run correctly', () => {
-      const error = new Error('Operation Failed');
-      const result = failure(error);
+    it('should run correctly and successfully', () => {
+      const err = new Error('Operation Failed');
+      const res = failure(err);
 
-      expectTypeOf(result).toEqualTypeOf<Failure<Error>>();
+      expectTypeOf(res).toEqualTypeOf<Failure<Error>>();
 
-      expect(result).toStrictEqual({
-        isSuccess: false,
-        error,
-      });
+      expect(failure).not.toThrowError();
+
+      expect(res.isSuccess).toBe(false);
+      expect(res.error).toBe(err);
 
       // @ts-expect-error
-      expect(result.data).not.toBeDefined();
+      expect(res.data).not.toBeDefined();
+    });
+
+    it('should run with any type of error', () => {
+      const errBase = new Error('Operation Failed');
+      const errType = new TypeError('Operation Failed');
+
+      const resBase = failure(errBase);
+      const resType = failure(errType);
+
+      expectTypeOf(resBase).toEqualTypeOf<Failure<Error>>();
+      expectTypeOf(resType).toEqualTypeOf<Failure<TypeError>>();
+
+      expect(resBase.error).toBeInstanceOf(Error);
+      expect(resType.error).toBeInstanceOf(TypeError);
     });
   });
 
   describe('success', () => {
-    it('should run correctly', () => {
-      const result = success({
-        message: 'Operation Succeed',
+    it('should run correctly and successfully', () => {
+      const res = success({
+        message: 'Operation Succeeded',
       });
 
-      expectTypeOf(result).toEqualTypeOf<
+      expectTypeOf(res).toEqualTypeOf<
         Success<{
           message: string;
         }>
       >();
 
-      expect(result).toStrictEqual({
-        isSuccess: true,
-        data: {
-          message: 'Operation Succeed',
-        },
+      expect(success).not.toThrowError();
+
+      expect(res.isSuccess).toBe(true);
+      expect(res.data).toStrictEqual({
+        message: 'Operation Succeeded',
       });
 
       // @ts-expect-error
-      expect(result.error).not.toBeDefined();
+      expect(res.error).not.toBeDefined();
+    });
+
+    it('should run with any type of data', () => {
+      const resBoolean = success(true);
+      const resNumber = success(1);
+      const resString = success('Operation Succeeded');
+      const resObject = success({
+        message: 'Operation Succeeded',
+      });
+
+      expectTypeOf(resBoolean).toEqualTypeOf<Success<boolean>>();
+      expectTypeOf(resNumber).toEqualTypeOf<Success<number>>();
+      expectTypeOf(resString).toEqualTypeOf<Success<string>>();
+      expectTypeOf(resObject).toEqualTypeOf<Success<{ message: string }>>();
+
+      expect(resBoolean.data).toBeTypeOf('boolean');
+      expect(resNumber.data).toBeTypeOf('number');
+      expect(resString.data).toBeTypeOf('string');
+      expect(resObject.data).toBeTypeOf('object');
     });
   });
 });
