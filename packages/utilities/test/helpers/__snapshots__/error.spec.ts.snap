@@ -1,0 +1,259 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`error helper > createError > should run correctly 1`] = `
+"ArcanxError: ConfigNotDefined
+
+Failed to resolve config file, it was not defined inside the project.
+It can be either not defined or incorrectly defined.
+
+Suggestions
+ ✦  Please check if the config file is defined inside the project
+ ✦  Please check if the config file is correctly defined
+ ✦  Please refer to the documentation for more information
+
+Stacks
+ ✦  at createError
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:181:23
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21"
+`;
+
+exports[`error helper > createError > should run with any key and args correctly 1`] = `
+[Error: ArcanxError: ConfigNotDefined
+
+Failed to resolve config file, it was not defined inside the project.
+It can be either not defined or incorrectly defined.
+
+Suggestions
+ ✦  Please check if the config file is defined inside the project
+ ✦  Please check if the config file is correctly defined
+ ✦  Please refer to the documentation for more information
+
+Stacks
+ ✦  at createError
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:181:23
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21]
+`;
+
+exports[`error helper > createError > should run with any key and args correctly 2`] = `
+[Error: ArcanxError: ConfigNotFound
+
+Failed to resolve config file, it was not found on the provided path.
+It can be either not created or incorrectly typed.
+Provided path ⇒ config.ts
+
+Suggestions
+ ✦  Please check if the config file exists on the provided path
+ ✦  Please check if the config file is correctly typed
+ ✦  Please refer to the documentation for more information
+
+Stacks
+ ✦  at createError
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:181:23
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21]
+`;
+
+exports[`error helper > createError > should run with any key and args correctly 3`] = `
+[Error: ArcanxError: ConfigInvalidFormat
+
+Failed to parse config file, it was not in correct format.
+It cannot be formatted with expected formatter.
+Provided config at ⇒ config.ts
+
+Details
+ ✦  JSONError
+
+Suggestions
+ ✦  Please check if the config file is in correct extension
+ ✦  Please refer to the documentation for more information
+
+Stacks
+ ✦  at createError
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:181:23
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21]
+`;
+
+exports[`error helper > createError > should run with any key and args correctly 4`] = `
+[Error: ArcanxError: ConfigInvalidValue
+
+Failed to parse config file, some values are invalid.
+Please refer to the details for erroring values.
+Provided config at ⇒ config.ts
+
+Details
+ ✦  Field #1 is required
+ ✦  Field #2 is required
+
+Suggestions
+ ✦  Please ensure that the given values are valid
+ ✦  Please ensure that the required values are present
+ ✦  Please refer to the documentation for more information
+
+Stacks
+ ✦  at createError
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:181:23
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21]
+`;
+
+exports[`error helper > createError > should throw error when the given key is not exists 1`] = `
+[Error: ArcanxError: Error
+
+Failed to find error registry key: non-existing-key.
+Please make sure the key provided is exist in the error registry.
+
+Stacks
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:279:20
+ ✦  at retrieveContractFromRegistry
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:93:11
+ ✦  at createError
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:180:23
+ ✦  at getError
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:181:3
+ ✦  at Proxy.<anonymous>
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:268:14
+ ✦  at Proxy.methodWrapper
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/chai@6.2.1/node_modules/chai/index.js:1700:25]
+`;
+
+exports[`error helper > createErrorFromInstance > should run correctly 1`] = `
+"ArcanxError: Error
+
+Operation Failed
+
+Stacks
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21
+ ✦  at runTest
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1650:12"
+`;
+
+exports[`error helper > createErrorFromInstance > should run with any type of error correctly 1`] = `
+[Error: ArcanxError: Error
+
+Operation Failed
+
+Stacks
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21
+ ✦  at runTest
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1650:12]
+`;
+
+exports[`error helper > createErrorFromInstance > should run with any type of error correctly 2`] = `
+[ReferenceError: ArcanxError: ReferenceError
+
+Operation Failed
+
+Stacks
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21
+ ✦  at runTest
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1650:12]
+`;
+
+exports[`error helper > createErrorFromInstance > should run with any type of error correctly 3`] = `
+[TypeError: ArcanxError: TypeError
+
+Operation Failed
+
+Stacks
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21
+ ✦  at runTest
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1650:12]
+`;
+
+exports[`error helper > createErrorFromInstance > should throw error when the given instance is non-error value 1`] = `
+[Error: ArcanxError: Error
+
+Given instance: string is not an instance of Error.
+Please make sure the instance provided is an instance of Error.
+
+Stacks
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:279:20
+ ✦  at createErrorFromInstance
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:223:11
+ ✦  at getError
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:181:3
+ ✦  at Proxy.<anonymous>
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:268:14
+ ✦  at Proxy.methodWrapper
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/chai@6.2.1/node_modules/chai/index.js:1700:25]
+`;
+
+exports[`error helper > createErrorFromMessage > should run correctly 1`] = `
+"ArcanxError: Error
+
+Operation Failed
+
+Stacks
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:279:20
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27
+ ✦  at trace
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21"
+`;
+
+exports[`error helper > createErrorFromMessage > should throw error when the given message is non-string value 1`] = `
+[Error: ArcanxError: Error
+
+Given message is not a string
+Please make sure the message provided is a string.
+
+Stacks
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:279:20
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:271:11
+ ✦  at getError
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:181:3
+ ✦  at Proxy.<anonymous>
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:268:14
+ ✦  at Proxy.methodWrapper
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/chai@6.2.1/node_modules/chai/index.js:1700:25]
+`;
