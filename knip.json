@@ -1,5 +1,18 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreDependencies": ["supports-color"],
+  "ignoreFiles": [],
+  "rules": {
+    "binaries": "error",
+    "dependencies": "error",
+    "devDependencies": "error",
+    "duplicates": "error",
+    "exports": "warn",
+    "files": "error",
+    "types": "warn",
+    "unlisted": "error",
+    "unresolved": "error"
+  },
   "workspaces": {
     ".": {
       "ignore": ["tsdown.config.ts"]
