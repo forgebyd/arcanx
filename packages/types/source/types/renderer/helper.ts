@@ -1,7 +1,6 @@
 // biome-ignore-all lint/complexity/noBannedTypes: type def file
 
 import type { ReadonlyDeep, UnknownArray, UnknownRecord } from 'type-fest';
-
 import type { Brand } from '../utilities/helper.js';
 import type { AbsolutePath } from '../utilities/path.js';
 

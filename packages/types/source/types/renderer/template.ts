@@ -1,5 +1,4 @@
 import type { ReadonlyDeep } from 'type-fest';
-
 import type { Brand } from '../utilities/helper.js';
 import type { AbsolutePath, RelativePath } from '../utilities/path.js';
 
