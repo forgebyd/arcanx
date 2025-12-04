@@ -168,6 +168,15 @@ export const createError = <
   key: TKey,
   ...args: TArgs
 ): Error => {
+  if (typeof key !== 'string') {
+    throw createErrorFromMessage(
+      [
+        `Given key: ${chalk.bold.underline(key)} is not a string.`,
+        'Please make sure the key provided is a string.',
+      ].join('\n')
+    );
+  }
+
   const errContract = retrieveContractFromRegistry(ERR_REGISTRY, key, ...args);
   const errInstance = new Error(errContract.messages.join('\n'));
 
@@ -210,6 +219,15 @@ export const createErrorFromInstance = (
   instance: Error,
   options?: Omit<IErrRegistryContract, 'messages'>
 ): Error => {
+  if (!(instance instanceof Error)) {
+    throw createErrorFromMessage(
+      [
+        `Given instance: ${chalk.bold.underline(typeof instance)} is not an instance of Error.`,
+        'Please make sure the instance provided is an instance of Error.',
+      ].join('\n')
+    );
+  }
+
   instance.message = formatAll([
     chalk.bold.underline.red(`${ERR_NAME}: ${pascalCase(instance.name)}`),
     formatMessages([instance.message]),
@@ -249,6 +267,15 @@ export const createErrorFromMessage = (
   message: string,
   options?: Omit<IErrRegistryContract, 'messages'>
 ): Error => {
+  if (typeof message !== 'string') {
+    throw createErrorFromMessage(
+      [
+        'Given message is not a string',
+        'Please make sure the message provided is a string.',
+      ].join('\n')
+    );
+  }
+
   const instance = new Error(message);
 
   instance.message = formatAll([
