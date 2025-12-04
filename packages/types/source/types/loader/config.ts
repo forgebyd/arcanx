@@ -20,7 +20,7 @@ import type {
  * A type representing the specification of a configuration.
  * This type is used to ensure type safety when working with configurations.
  *
- * @category Loader
+ * @category Loader.Config
  */
 export type ConfigSpec = {
   behavior?: {
@@ -52,7 +52,7 @@ export type ConfigSpec = {
  * A type representing the resolved representation of a configuration.
  * This type is used to ensure type safety when working with configurations.
  *
- * @category Loader
+ * @category Loader.Config
  */
 export type ConfigResolved = {
   behavior: {
@@ -84,7 +84,7 @@ export type ConfigResolved = {
  * A type representing the manifest of a configuration.
  * This type is used to ensure type safety when working with configurations.
  *
- * @category Loader
+ * @category Loader.Config
  */
 export type ConfigManifest = Readonly<{
   behavior: Readonly<ConfigResolved['behavior']>;

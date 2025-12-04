@@ -10,7 +10,7 @@ import type { Brand } from '../utilities/helper.js';
  * @see {@link GeneratorActionResolved}
  * @see {@link GeneratorActionManifest}
  *
- * @category Loader
+ * @category Loader.GeneratorAction
  */
 export type GeneratorActionBuiltInType = Brand<
   'add' | 'append' | 'copy' | 'modify' | 'move' | 'remove',
@@ -25,7 +25,7 @@ export type GeneratorActionBuiltInType = Brand<
  * @see {@link GeneratorActionResolved}
  * @see {@link GeneratorActionManifest}
  *
- * @category Loader
+ * @category Loader.GeneratorAction
  */
 export type GeneratorActionCustomType = Brand<
   string,
@@ -40,7 +40,7 @@ export type GeneratorActionCustomType = Brand<
  * @see {@link GeneratorActionResolved}
  * @see {@link GeneratorActionManifest}
  *
- * @category Loader
+ * @category Loader.GeneratorAction
  */
 export type GeneratorTemplateType = Brand<
   'file' | 'raw',
@@ -51,7 +51,7 @@ export type GeneratorTemplateType = Brand<
  * A specification for a generator action.
  * This type is used to ensure type safety when working with generator actions.
  *
- * @category Loader
+ * @category Loader.GeneratorAction
  */
 export type GeneratorActionSpec = {
   type: GeneratorActionBuiltInType | GeneratorActionCustomType;
@@ -68,7 +68,7 @@ export type GeneratorActionSpec = {
  * A resolved representation of a generator action.
  * This type is used to ensure type safety when working with generator actions.
  *
- * @category Loader
+ * @category Loader.GeneratorAction
  */
 export type GeneratorActionResolved = {
   type: GeneratorActionBuiltInType | GeneratorActionCustomType;
@@ -85,6 +85,6 @@ export type GeneratorActionResolved = {
  * A manifest for a generator action.
  * This type is used to ensure type safety when working with generator actions.
  *
- * @category Loader
+ * @category Loader.GeneratorAction
  */
 export type GeneratorActionManifest = ReadonlyDeep<GeneratorActionResolved>;

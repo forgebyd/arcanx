@@ -8,7 +8,7 @@ import type { Brand } from '../utilities/helper.js';
  * @see {@link ConfigStrategyResolved}
  * @see {@link ConfigStrategyManifest}
  *
- * @category Loader
+ * @category Loader.ConfigStrategy
  */
 export type CacheResolutionStrategy = Brand<
   'memory' | 'filesystem' | 'none',
@@ -24,7 +24,7 @@ export type CacheResolutionStrategy = Brand<
  * @see {@link ConfigStrategyResolved}
  * @see {@link ConfigStrategyManifest}
  *
- * @category Loader
+ * @category Loader.ConfigStrategy
  */
 export type ConflictResolutionStrategy = Brand<
   'abort' | 'ask' | 'overwrite' | 'skip',
@@ -40,7 +40,7 @@ export type ConflictResolutionStrategy = Brand<
  * @see {@link ConfigStrategyResolved}
  * @see {@link ConfigStrategyManifest}
  *
- * @category Loader
+ * @category Loader.ConfigStrategy
  */
 export type ErrorResolutionStrategy = Brand<
   'abort' | 'skip',
@@ -51,7 +51,7 @@ export type ErrorResolutionStrategy = Brand<
  * A type representing the specification of a configuration strategy.
  * This type is used to ensure type safety when working with configuration strategies.
  *
- * @category Loader
+ * @category Loader.ConfigStrategy
  */
 export type ConfigStrategySpec = {
   cacheResolution?: CacheResolutionStrategy;
@@ -63,7 +63,7 @@ export type ConfigStrategySpec = {
  * A type representing the resolved representation of a configuration strategy.
  * This type is used to ensure type safety when working with configuration strategies.
  *
- * @category Loader
+ * @category Loader.ConfigStrategy
  */
 export type ConfigStrategyResolved = {
   cacheResolution: CacheResolutionStrategy;
@@ -75,6 +75,6 @@ export type ConfigStrategyResolved = {
  * A type representing the manifest of a configuration strategy.
  * This type is used to ensure type safety when working with configuration strategies.
  *
- * @category Loader
+ * @category Loader.ConfigStrategy
  */
 export type ConfigStrategyManifest = Readonly<ConfigStrategyResolved>;

@@ -4,6 +4,8 @@
  * - `messages`: An array of strings representing error messages.
  * - `details`: An optional array of strings providing additional details about the error.
  * - `suggestions`: An optional array of strings suggesting possible solutions.
+ *
+ * @category Utility.Error
  */
 export interface IErrRegistryContract {
   messages: string[];
@@ -16,6 +18,8 @@ export interface IErrRegistryContract {
  *
  * @template TRegistry - The error registry type.
  * @returns The keys of the error registry as strings.
+ *
+ * @category Utility.Error
  */
 export type ErrRegistryKey<TRegistry> = keyof TRegistry & string;
 
@@ -25,6 +29,8 @@ export type ErrRegistryKey<TRegistry> = keyof TRegistry & string;
  * @template TRegistry - The error registry type.
  * @template TKey - The specific key in the error registry.
  * @returns A function that returns an `IErrRegistryContract`.
+ *
+ * @category Utility.Error
  */
 export type ErrRegistryDelegate<
   TRegistry,

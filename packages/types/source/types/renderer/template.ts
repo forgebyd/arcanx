@@ -14,7 +14,7 @@ import type { AbsolutePath, RelativePath } from '../utilities/path.js';
  * const templateName: TemplateName = 'template' as TemplateName;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Template
  */
 export type TemplateName = Brand<string, 'TemplateName'>;
 
@@ -29,7 +29,7 @@ export type TemplateName = Brand<string, 'TemplateName'>;
  * const templateDotName: TemplateDotName = 'template.dot.name' as TemplateDotName;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Template
  */
 export type TemplateDotName = Brand<string, 'TemplateDotName'>;
 
@@ -43,7 +43,7 @@ export type TemplateDotName = Brand<string, 'TemplateDotName'>;
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Template
  */
 export type TemplateResourceSpec = {
   sourcePath: string;
@@ -66,7 +66,7 @@ export type TemplateResourceSpec = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Template
  */
 export type TemplateResourceResolved = {
   name: TemplateName;
@@ -98,6 +98,6 @@ export type TemplateResourceResolved = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Template
  */
 export type TemplateResourceManifest = ReadonlyDeep<TemplateResourceResolved>;

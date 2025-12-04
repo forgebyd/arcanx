@@ -13,7 +13,7 @@ import type { ReadonlyDeep, RequiredDeep, Simplify } from 'type-fest';
  * @see {@link GeneratorPromptResolved}
  * @see {@link GeneratorPromptManifest}
  *
- * @category Loader
+ * @category Loader.GeneratorPrompt
  */
 export type GeneratorPromptValidatorDelegate = (
   value: string
@@ -23,7 +23,7 @@ export type GeneratorPromptValidatorDelegate = (
  * A prompt specification for a generator.
  * This type is used to ensure type safety when working with prompts.
  *
- * @category Loader
+ * @category Loader.GeneratorPrompt
  */
 export type GeneratorPromptSpec = Simplify<
   {
@@ -61,7 +61,7 @@ export type GeneratorPromptSpec = Simplify<
  * A resolved representation of a prompt.
  * This type is used to ensure type safety when working with prompts.
  *
- * @category Loader
+ * @category Loader.GeneratorPrompt
  */
 export type GeneratorPromptResolved = RequiredDeep<GeneratorPromptSpec>;
 
@@ -69,6 +69,6 @@ export type GeneratorPromptResolved = RequiredDeep<GeneratorPromptSpec>;
  * A manifest for a prompt.
  * This type is used to ensure type safety when working with prompts.
  *
- * @category Loader
+ * @category Loader.GeneratorPrompt
  */
 export type GeneratorPromptManifest = ReadonlyDeep<GeneratorPromptResolved>;

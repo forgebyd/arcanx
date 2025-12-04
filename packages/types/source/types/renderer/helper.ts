@@ -18,7 +18,7 @@ import type { AbsolutePath } from '../utilities/path.js';
  * const helperName: TemplateHelperName = 'myHelper' as TemplateHelperName;
  * ```
  *
- * @category Renderer
+ * @category Renderer.Helper
  */
 export type TemplateHelperName = Brand<string, 'TemplateHelperName'>;
 
@@ -40,7 +40,7 @@ export type TemplateHelperName = Brand<string, 'TemplateHelperName'>;
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Helper
  */
 export type TemplateHelperResourceSpec<TContext = UnknownArray> = {
   name?: string;
@@ -66,7 +66,7 @@ export type TemplateHelperResourceSpec<TContext = UnknownArray> = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Helper
  */
 export type TemplateHelperResourceResolved<TContext = UnknownArray> = {
   name: TemplateHelperName;
@@ -96,7 +96,7 @@ export type TemplateHelperResourceResolved<TContext = UnknownArray> = {
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Helper
  */
 export type TemplateHelperResourceManifest<TContext = UnknownArray> =
   ReadonlyDeep<TemplateHelperResourceResolved<TContext>>;
@@ -120,7 +120,7 @@ export type TemplateHelperResourceManifest<TContext = UnknownArray> =
  * };
  * ```
  *
- * @category Renderer
+ * @category Renderer.Helper
  */
 export type TemplateHelperDelegate<TContext = UnknownArray> = (
   context: TContext,

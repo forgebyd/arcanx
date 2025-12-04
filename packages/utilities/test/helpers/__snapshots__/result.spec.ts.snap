@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`result helper > attemptSync > should throw an error if the callback is a promise 1`] = `
+"ArcanxError: Error
+
+Given callback cannot be a promise instance or an asynchronous function.
+Please make sure you pass a synchronous type of function.
+
+Stacks
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:279:20
+ ✦  at attemptSync
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/result.ts:70:13
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27"
+`;
+
+exports[`result helper > attemptSync > should throw an error if the callback is an async function 1`] = `
+"ArcanxError: Error
+
+Given callback cannot be a promise instance or an asynchronous function.
+Please make sure you pass a synchronous type of function.
+
+Stacks
+ ✦  at createErrorFromMessage
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/error.ts:279:20
+ ✦  at attemptSync
+    /home/eternal/forgebyd/arcanx/packages/utilities/source/helpers/result.ts:70:13
+ ✦  at runWithTimeout
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/@vitest+runner@4.0.15/node_modules/@vitest/runner/dist/index.js:1206:10
+ ✦  at Traces.$
+    file:///home/eternal/forgebyd/arcanx/node_modules/.pnpm/vitest@4.0.15_@types+node@24.10.1_jiti@2.6.1_tsx@4.20.6_yaml@2.8.1/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27"
+`;

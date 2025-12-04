@@ -11,7 +11,7 @@ import type { Brand, Id, Timestamp } from '../utilities/helper.js';
  *
  * @see {@link ContextRuntimeManifest}
  *
- * @category Core
+ * @category Core.ContextRuntime
  */
 export type ContextRuntimeId = Brand<Id<'runtime'>, 'ContextRuntimeId'>;
 
@@ -19,7 +19,7 @@ export type ContextRuntimeId = Brand<Id<'runtime'>, 'ContextRuntimeId'>;
  * A type representing the manifest of a context runtime.
  * This type is used to ensure type safety when working with context runtimes.
  *
- * @category Core
+ * @category Core.ContextRuntime
  */
 export type ContextRuntimeManifest = Readonly<{
   id: ContextRuntimeId;

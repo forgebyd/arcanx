@@ -10,6 +10,6 @@ import type { Brand } from './helper.js';
  * const ttl: CacheTTL = 60000 as CacheTTL; // 60 seconds
  * ```
  *
- * @category Utilities
+ * @category Utility.Cache
  */
 export type CacheTTL = Brand<number, 'CacheTTL'>;

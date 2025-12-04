@@ -3,3 +3,5 @@ pnpm pub.lint.packages
 
 pnpm depcheck
 pnpm typecheck
+
+pnpm test

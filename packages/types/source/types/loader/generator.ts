@@ -19,7 +19,7 @@ import type {
  * @see {@link GeneratorResourceResolved}
  * @see {@link GeneratorResourceManifest}
  *
- * @category Loader
+ * @category Loader.Generator
  */
 export type GeneratorResourceName = Brand<string, 'GeneratorName'>;
 
@@ -27,7 +27,7 @@ export type GeneratorResourceName = Brand<string, 'GeneratorName'>;
  * A specification for a generator.
  * This type is used to ensure type safety when working with generators.
  *
- * @category Loader
+ * @category Loader.Generator
  */
 export type GeneratorResourceSpec = {
   name: string;
@@ -40,7 +40,7 @@ export type GeneratorResourceSpec = {
  * A resolved representation of a generator.
  * This type is used to ensure type safety when working with generators.
  *
- * @category Loader
+ * @category Loader.Generator
  */
 export type GeneratorResourceResolved = {
   name: GeneratorResourceName;
@@ -57,7 +57,7 @@ export type GeneratorResourceResolved = {
  * A manifest representation of a resolved generator.
  * This type is used to ensure type safety when working with generators.
  *
- * @category Loader
+ * @category Loader.Generator
  */
 export type GeneratorResourceManifest = Readonly<{
   name: GeneratorResourceName;

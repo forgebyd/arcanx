@@ -23,7 +23,12 @@
 
     "erasableSyntaxOnly": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+
+    "paths": {
+      "@arcanx/types": ["./packages/types/source/index.ts"],
+      "@arcanx/utilities": ["./packages/utilities/source/index.ts"]
+    }
   },
   "exclude": ["node_modules", "build", "dist", "out", "coverage"],
   "include": [

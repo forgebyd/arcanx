@@ -20,7 +20,7 @@ import type { AbsolutePath } from '../utilities/path.js';
  * @see {@link ArtifactResourceResolved}
  * @see {@link ArtifactResourceManifest}
  *
- * @category Runner
+ * @category Runner.Artifact
  */
 export type ArtifactId = Brand<Id<'artifact'>, 'ArtifactId'>;
 
@@ -28,7 +28,7 @@ export type ArtifactId = Brand<Id<'artifact'>, 'ArtifactId'>;
  * A resolved representation of an artifact.
  * This type is used to ensure type safety when working with artifact resources.
  *
- * @category Runner
+ * @category Runner.Artifact
  */
 export type ArtifactResourceResolved = {
   id: ArtifactId;
@@ -47,6 +47,6 @@ export type ArtifactResourceResolved = {
  * A manifest representation of an artifact.
  * This type is used to ensure type safety when working with artifact resources.
  *
- * @category Runner
+ * @category Runner.Artifact
  */
 export type ArtifactResourceManifest = ReadonlyDeep<ArtifactResourceResolved>;
