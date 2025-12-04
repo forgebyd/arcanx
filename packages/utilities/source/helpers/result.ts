@@ -1,5 +1,7 @@
 import type { Failure, Result, Success } from '@arcanx/types';
 
+import { createErrorFromMessage } from './error.js';
+
 /**
  * Attempts to execute the given callback function asynchronously,
  * returning a success result if no exception is thrown,
@@ -65,7 +67,12 @@ export const attemptSync = <TData, TError extends Error>(
     ) {
       // throw error when the given callback is a Promise
       // while executing attemptSync
-      throw new Error('Given callback cannot be a promise instance.');
+      throw createErrorFromMessage(
+        [
+          'Given callback cannot be a promise instance or an asynchronous function.',
+          'Please make sure you pass a synchronous type of function.',
+        ].join('\n')
+      );
     }
 
     return success(callback.apply(null, []));
