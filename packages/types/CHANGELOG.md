@@ -1,5 +1,13 @@
 # @arcanx/types
 
+## 0.1.1
+
+### Patch Changes
+
+- 5946364: ### Refactor and maintenance, it includes:
+  - Updating documentation comments
+  - Fix unexported files
+
 ## 0.1.0
 
 ### Minor Changes
